@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="성광진 후보 함께하기 — 사전투표(5/29~30), 선거일(6/3) 투표 안내, 지지 선언">
+  <title>함께하기 | 준비된 교육감 성광진</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero { background:var(--danger); color:var(--white); padding:clamp(3.5rem,7vw,5.5rem) 0 clamp(3rem,6vw,4.5rem); position:relative; overflow:hidden; }
+    .page-hero::before { content:'6.3'; position:absolute; right:-1rem; top:-2rem; font-family:var(--font-serif); font-size:14rem; font-weight:800; color:rgba(255,255,255,.06); line-height:1; }
+    .breadcrumb { font-size:.8125rem; color:rgba(255,255,255,.55); margin-bottom:1rem; display:flex; align-items:center; gap:.4rem; }
+    .breadcrumb a { color:rgba(255,255,255,.65); }
+    .countdown-box { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); border-radius:var(--radius-xl); padding:2rem; display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap; margin-top:2rem; }
+    .countdown-unit { text-align:center; flex:1; min-width:55px; }
+    .countdown-num { font-family:var(--font-serif); font-size:2.5rem; font-weight:800; color:var(--white); line-height:1; }
+    .countdown-label { font-size:.75rem; color:rgba(255,255,255,.7); margin-top:.25rem; }
+    .countdown-sep { font-size:2rem; font-weight:300; color:rgba(255,255,255,.4); align-self:flex-start; padding-top:.25rem; }
+    .date-card { border-radius:var(--radius-lg); padding:2rem; text-align:center; }
+    .date-big { font-family:var(--font-serif); font-size:2.25rem; font-weight:800; line-height:1.2; margin:.5rem 0; }
+    .vote-step { display:flex; gap:1.5rem; align-items:flex-start; background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-md); padding:1.5rem; margin-bottom:1.25rem; }
+    .vote-step-num { width:2.5rem; height:2.5rem; border-radius:50%; flex-shrink:0; background:var(--danger); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; }
+    .vote-step-title { font-weight:700; color:var(--navy); margin-bottom:.35rem; font-size:1rem; }
+    .vote-step-desc { font-size:.875rem; color:var(--gray-600); line-height:1.65; }
+    .form-group { margin-bottom:1.25rem; }
+    .form-label { display:block; font-size:.875rem; font-weight:600; color:var(--gray-800); margin-bottom:.4rem; }
+    .form-input, .form-select, .form-textarea { width:100%; padding:.65rem .875rem; border:1.5px solid var(--gray-200); border-radius:var(--radius-sm); font-size:.9375rem; font-family:var(--font-sans); color:var(--gray-800); background:var(--white); transition:border-color var(--transition); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--navy); outline:none; }
+    .form-textarea { resize:vertical; min-height:80px; }
+    .share-section { background:var(--navy); border-radius:var(--radius-lg); padding:2rem; color:var(--white); }
+    @media (max-width:640px) { .countdown-box { gap:1rem; } .countdown-num { font-size:1.75rem; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main id="main-content" class="page-offset">
+
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <nav class="breadcrumb" aria-label="경로">
+        <a href="../index.html">홈</a> <span>›</span> <span aria-current="page">함께하기</span>
+      </nav>
+      <span class="section-label" style="color:rgba(255,255,255,.8)">6월 3일, 대전교육 대전환의 날</span>
+      <h1 class="section-title light">여러분의 한 표가<br>아이들의 미래를 바꿉니다</h1>
+      <p class="section-subtitle light" style="margin-bottom:0;max-width:560px">교실을 바꾸는 힘도, 아이들의 내일을 지키는 힘도 결국 시민 여러분의 투표에서 시작됩니다.</p>
+      <div class="countdown-box" role="timer" aria-label="선거일까지 남은 시간">
+        <div class="countdown-unit"><div class="countdown-num" id="cd-days">--</div><div class="countdown-label">일</div></div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-label">시간</div></div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-minutes">--</div><div class="countdown-label">분</div></div>
+        <div class="countdown-sep" aria-hidden="true">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cd-seconds">--</div><div class="countdown-label">초</div></div>
+        <div style="flex:1;min-width:130px;font-size:.8125rem;opacity:.8">선거일 <strong style="color:#ffcdd2">2026년 6월 3일(화)</strong>까지<br>사전투표 5월 29일~30일</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-3">
+        <span class="section-label">투표 일정</span>
+        <h2 class="section-title">언제, 어떻게 투표하나요?</h2>
+      </div>
+      <div class="grid-2 fade-in">
+        <div class="date-card" style="background:var(--navy);color:var(--white)">
+          <div style="font-size:1.75rem">🗳</div>
+          <div style="font-size:.875rem;font-weight:600;opacity:.8;margin-top:.5rem">사전투표</div>
+          <div class="date-big">5월 29일 · 30일</div>
+          <div style="font-size:.875rem;opacity:.8">금요일 · 토요일</div>
+          <div style="font-size:.8125rem;opacity:.7;margin-top:.5rem">오전 6시 ~ 오후 6시<br>전국 어느 사전투표소에서나 가능</div>
+        </div>
+        <div class="date-card" style="background:var(--danger);color:var(--white)">
+          <div style="font-size:1.75rem">✅</div>
+          <div style="font-size:.875rem;font-weight:600;opacity:.8;margin-top:.5rem">선거일</div>
+          <div class="date-big">6월 3일(화)</div>
+          <div style="font-size:.875rem;opacity:.8">대전교육 대전환의 날</div>
+          <div style="font-size:.8125rem;opacity:.7;margin-top:.5rem">오전 6시 ~ 오후 8시<br>지정된 투표소에서만 가능</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <span class="section-label">투표 방법</span>
+      <h2 class="section-title" style="margin-bottom:2rem">이렇게 투표하세요</h2>
+      <div role="list">
+        <div class="vote-step fade-in" role="listitem">
+          <div class="vote-step-num">1</div>
+          <div><div class="vote-step-title">신분증을 지참하세요</div><div class="vote-step-desc">주민등록증, 운전면허증, 여권, 학생증(사진 있는 것) 등 사진이 있는 신분증을 가지고 투표소를 방문하세요.</div></div>
+        </div>
+        <div class="vote-step fade-in fade-in-delay-1" role="listitem">
+          <div class="vote-step-num">2</div>
+          <div><div class="vote-step-title">투표소를 찾아가세요</div><div class="vote-step-desc">사전투표는 전국 어느 사전투표소에서나 가능합니다. 선거일에는 지정된 투표소를 이용해야 합니다. <a href="https://www.nec.go.kr" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">중앙선거관리위원회</a>에서 투표소를 확인하세요.</div></div>
+        </div>
+        <div class="vote-step fade-in fade-in-delay-2" role="listitem">
+          <div class="vote-step-num">3</div>
+          <div><div class="vote-step-title">성광진을 선택하세요</div><div class="vote-step-desc">대전광역시교육감 투표용지에서 <strong style="color:var(--navy)">성광진</strong> 후보에게 도장을 찍어주세요. 민주진보 교육감 단일후보입니다.</div></div>
+        </div>
+        <div class="vote-step fade-in fade-in-delay-3" role="listitem">
+          <div class="vote-step-num">4</div>
+          <div><div class="vote-step-title">소중한 한 표를 완성하세요</div><div class="vote-step-desc">기표한 투표용지를 반으로 접어 투표함에 넣으면 완료됩니다. 여러분의 한 표가 대전교육을 바꿉니다.</div></div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;text-align:center">
+        <a href="https://www.nec.go.kr" target="_blank" rel="noopener" class="btn btn-primary">중앙선거관리위원회 투표소 찾기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:3rem;align-items:start">
+        <div>
+          <span class="section-label">지지 선언</span>
+          <h2 class="section-title" style="margin-bottom:.75rem">함께 대전교육을<br>바꿔주세요</h2>
+          <p style="font-size:1rem;color:var(--gray-600);line-height:1.75;margin-bottom:1.5rem">성광진 후보를 지지해 주시는 분들의 응원이 큰 힘이 됩니다.</p>
+          <div class="share-section fade-in">
+            <h3 style="font-size:1rem;font-weight:700;color:var(--gold-light);margin-bottom:.875rem">📣 주변에 알려주세요</h3>
+            <p style="font-size:.875rem;opacity:.8;line-height:1.7;margin-bottom:1.25rem">대전교육 9하기를 공유해서 더 많은 시민들이 알 수 있게 도와주세요.</p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+              <button onclick="shareNative()" class="btn" style="background:rgba(255,255,255,.15);color:var(--white);font-size:.875rem;padding:.55rem 1rem;font-family:var(--font-sans)">📤 공유하기</button>
+              <button onclick="copyHomeLink()" class="btn" style="background:rgba(255,255,255,.15);color:var(--white);font-size:.875rem;padding:.55rem 1rem;font-family:var(--font-sans)">🔗 링크 복사</button>
+            </div>
+            <p id="share-copied" style="font-size:.75rem;color:var(--gold-light);margin-top:.5rem;display:none">✅ 링크가 복사되었습니다!</p>
+          </div>
+        </div>
+        <div>
+          <div class="card fade-in fade-in-delay-2">
+            <h3 style="font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:1.25rem">지지 선언 참여하기</h3>
+            <form id="support-form" onsubmit="submitSupport(event)" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="s-name">이름 <span style="color:var(--danger)">*</span></label>
+                <input class="form-input" id="s-name" type="text" placeholder="홍길동" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-district">거주 구</label>
+                <select class="form-select" id="s-district">
+                  <option value="">선택해 주세요</option>
+                  <option>동구</option><option>중구</option><option>서구</option><option>유성구</option><option>대덕구</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-role">유권자 유형</label>
+                <select class="form-select" id="s-role">
+                  <option value="">선택해 주세요</option>
+                  <option>학부모</option><option>교사·교직원</option><option>학생</option><option>일반 시민</option><option>교육노동자</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-msg">응원 메시지 (선택)</label>
+                <textarea class="form-textarea" id="s-msg" placeholder="성광진 후보를 응원하는 한마디를 남겨주세요."></textarea>
+              </div>
+              <div class="form-group">
+                <label style="display:flex;align-items:flex-start;gap:.5rem;font-size:.8125rem;color:var(--gray-600);cursor:pointer">
+                  <input type="checkbox" id="s-agree" required style="margin-top:2px;flex-shrink:0">
+                  <span>개인정보 수집·이용에 동의합니다. (이름, 거주 구를 선거 운동 목적으로 활용)</span>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-danger" style="width:100%;justify-content:center">지지 선언 제출하기</button>
+            </form>
+            <div id="form-success" style="display:none;text-align:center;padding:2rem 0">
+              <div style="font-size:2.5rem;margin-bottom:.75rem">🎉</div>
+              <p style="font-weight:700;color:var(--navy);font-size:1.125rem;margin-bottom:.5rem">지지 선언 감사합니다!</p>
+              <p style="font-size:.9rem;color:var(--gray-600)">여러분의 응원이 대전교육 대전환의 힘이 됩니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  function startCountdown() {
+    const target = new Date('2026-06-03T06:00:00+09:00');
+    function update() {
+      const diff = target - new Date();
+      if (diff <= 0) { ['days','hours','minutes','seconds'].forEach(k => document.getElementById('cd-'+k).textContent = '0'); return; }
+      document.getElementById('cd-days').textContent    = Math.floor(diff / 86400000);
+      document.getElementById('cd-hours').textContent   = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    }
+    update(); setInterval(update, 1000);
+  }
+  function shareNative() {
+    if (navigator.share) navigator.share({ title:'준비된 교육감 성광진', text:'대전교육 9하기, 대전교육 대전환 — 6월 3일 성광진을 선택해 주세요!', url:'https://daejeoneduskj.github.io' });
+    else copyHomeLink();
+  }
+  function copyHomeLink() {
+    navigator.clipboard.writeText('https://daejeoneduskj.github.io').then(() => {
+      const m = document.getElementById('share-copied'); m.style.display = 'block';
+      setTimeout(() => m.style.display = 'none', 2500);
+    });
+  }
+  function submitSupport(e) {
+    e.preventDefault();
+    if (!document.getElementById('s-name').value.trim()) { alert('이름을 입력해 주세요.'); return; }
+    if (!document.getElementById('s-agree').checked) { alert('개인정보 수집·이용에 동의해 주세요.'); return; }
+    document.getElementById('support-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+  document.addEventListener('DOMContentLoaded', startCountdown);
+</script>
+</body>
+</html>

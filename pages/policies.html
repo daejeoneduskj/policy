@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="대전교육 9하기 — 성광진 후보 9대 핵심 공약 전체 목록">
+  <title>대전교육 9하기 | 준비된 교육감 성광진</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero { background:var(--navy); color:var(--white); padding:clamp(3.5rem,7vw,5.5rem) 0 clamp(3rem,6vw,4.5rem); position:relative; overflow:hidden; }
+    .page-hero::before { content:'9'; position:absolute; right:-1rem; top:-2rem; font-family:var(--font-serif); font-size:18rem; font-weight:800; color:rgba(255,255,255,.04); line-height:1; }
+    .breadcrumb { font-size:.8125rem; color:rgba(255,255,255,.5); margin-bottom:1rem; display:flex; align-items:center; gap:.4rem; }
+    .breadcrumb a { color:rgba(255,255,255,.6); } .breadcrumb a:hover { color:var(--white); }
+    .filter-bar { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .filter-btn { padding:.4rem 1rem; border-radius:999px; font-size:.875rem; font-weight:500; border:1.5px solid var(--gray-200); color:var(--gray-600); background:var(--white); cursor:pointer; transition:all var(--transition); font-family:var(--font-sans); }
+    .filter-btn:hover { border-color:var(--navy); color:var(--navy); }
+    .filter-btn.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
+    .policies-list { display:flex; flex-direction:column; gap:1.25rem; }
+    .policy-row { display:grid; grid-template-columns:auto 1fr auto; gap:2rem; align-items:start; background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-lg); padding:1.75rem 2rem; cursor:pointer; transition:all var(--transition); text-decoration:none; color:inherit; }
+    .policy-row:hover { border-color:var(--policy-color,var(--navy)); box-shadow:var(--shadow-md); transform:translateX(4px); }
+    .policy-row-num { font-family:var(--font-serif); font-size:2.5rem; font-weight:800; color:var(--policy-color,var(--navy)); opacity:.25; line-height:1; min-width:2.5rem; text-align:center; }
+    .policy-row-key { font-size:.75rem; font-weight:700; letter-spacing:.08em; color:var(--policy-color,var(--navy)); margin-bottom:.3rem; }
+    .policy-row-title { font-size:1.0625rem; font-weight:700; color:var(--navy); margin-bottom:.5rem; }
+    .policy-row-summary { font-size:.875rem; color:var(--gray-600); line-height:1.65; }
+    .policy-row-tags { display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.75rem; }
+    .policy-row-arrow { font-size:1.25rem; color:var(--gray-400); align-self:center; transition:transform var(--transition),color var(--transition); }
+    .policy-row:hover .policy-row-arrow { transform:translateX(4px); color:var(--navy); }
+    @media (max-width:640px) { .policy-row { grid-template-columns:auto 1fr; padding:1.25rem; } .policy-row-arrow { display:none; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main id="main-content" class="page-offset">
+
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <nav class="breadcrumb" aria-label="경로">
+        <a href="../index.html">홈</a> <span>›</span> <span aria-current="page">대전교육 9하기</span>
+      </nav>
+      <span class="section-label light">달라지는 교육, 시민의 선택에서 시작됩니다</span>
+      <h1 class="section-title light">대전교육 <span style="color:var(--gold-light)">9하기</span></h1>
+      <p class="section-subtitle light" style="margin-bottom:0;max-width:560px">9개 핵심 공약으로 대전교육을 대전환하겠습니다. 공약 하나하나는 모두 공보물 원문에 기반한 약속입니다.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="대상별 필터">
+        <button class="filter-btn active" onclick="filterPolicies('all',this)" aria-pressed="true">전체</button>
+        <button class="filter-btn" onclick="filterPolicies('학생',this)" aria-pressed="false">👦 학생</button>
+        <button class="filter-btn" onclick="filterPolicies('학부모',this)" aria-pressed="false">👨‍👩‍👧 학부모</button>
+        <button class="filter-btn" onclick="filterPolicies('교사',this)" aria-pressed="false">🧑‍🏫 교사</button>
+        <button class="filter-btn" onclick="filterPolicies('AI',this)" aria-pressed="false">🤖 AI·미래</button>
+        <button class="filter-btn" onclick="filterPolicies('장애인',this)" aria-pressed="false">♿ 장애인·평생교육</button>
+      </div>
+      <div class="policies-list" id="policies-list" role="list"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container text-center">
+      <span class="section-label">상위 프레임</span>
+      <h2 class="section-title" style="margin-bottom:.75rem">9하기는 3대 약속을<br>구체화한 실천 계획입니다</h2>
+      <p class="section-subtitle">3대 약속의 내용을 자세히 확인하세요.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="promises.html" class="btn btn-primary">3대 약속 보기 →</a>
+        <a href="together.html" class="btn btn-gold">🗳 함께하기</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  let _all = [];
+
+  function renderList(list) {
+    document.getElementById('policies-list').innerHTML = list.map((pol, i) => `
+      <a href="policy-detail.html?id=${pol.id}"
+         class="policy-row fade-in" style="--policy-color:${pol.color}" role="listitem"
+         aria-label="${pol.id}번 공약: ${pol.key} — ${pol.title}">
+        <div class="policy-row-num" aria-hidden="true">${String(pol.id).padStart(2,'0')}</div>
+        <div>
+          <div class="policy-row-key">${pol.icon} ${pol.key}</div>
+          <div class="policy-row-title">${pol.title}</div>
+          <div class="policy-row-summary">${pol.summary.substring(0,110)}...</div>
+          <div class="policy-row-tags">
+            ${pol.tags.map(t => `<span class="badge badge-gray" style="font-size:.7rem">#${t}</span>`).join('')}
+          </div>
+        </div>
+        <div class="policy-row-arrow" aria-hidden="true">›</div>
+      </a>`).join('');
+    initFadeIn();
+  }
+
+  function filterPolicies(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+    btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+    renderList(tag === 'all' ? _all : _all.filter(p => p.tags.some(t => t.includes(tag))));
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    _all = SKJ_DATA.policies9;
+    renderList(_all);
+  });
+</script>
+</body>
+</html>

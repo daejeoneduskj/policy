@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공약 상세 | 준비된 교육감 성광진</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero { color:var(--white); padding:clamp(3.5rem,7vw,5.5rem) 0 clamp(3rem,6vw,4.5rem); position:relative; overflow:hidden; }
+    .page-hero::before { content:attr(data-num); position:absolute; right:-1rem; top:-2rem; font-family:var(--font-serif); font-size:18rem; font-weight:800; color:rgba(255,255,255,.05); line-height:1; pointer-events:none; }
+    .breadcrumb { font-size:.8125rem; color:rgba(255,255,255,.5); margin-bottom:1rem; display:flex; align-items:center; gap:.4rem; }
+    .breadcrumb a { color:rgba(255,255,255,.6); } .breadcrumb a:hover { color:var(--white); }
+    .detail-grid { display:grid; grid-template-columns:1fr 320px; gap:3rem; align-items:start; }
+    .detail-summary { font-size:1.0625rem; color:var(--gray-600); line-height:1.8; margin-bottom:2rem; padding-left:1.25rem; border-left:3px solid var(--navy); }
+    .detail-points { display:flex; flex-direction:column; gap:.875rem; }
+    .detail-point { display:flex; gap:.875rem; align-items:flex-start; background:var(--off-white); border-radius:var(--radius-md); padding:1rem 1.25rem; }
+    .detail-point-num { width:1.75rem; height:1.75rem; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:800; color:var(--white); background:var(--navy); }
+    .detail-point-text { font-size:.9375rem; color:var(--gray-800); line-height:1.55; }
+    .sidebar { display:flex; flex-direction:column; gap:1.25rem; }
+    .sidebar-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-md); padding:1.25rem; }
+    .sidebar-card-title { font-size:.8125rem; font-weight:700; color:var(--gray-400); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.875rem; }
+    .prev-next { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2.5rem; }
+    .prev-next-btn { background:var(--white); border:1.5px solid var(--gray-200); border-radius:var(--radius-md); padding:1rem 1.25rem; font-size:.875rem; cursor:pointer; transition:all var(--transition); text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:.25rem; }
+    .prev-next-btn:hover { border-color:var(--navy); box-shadow:var(--shadow-sm); }
+    .prev-next-dir { font-size:.75rem; color:var(--gray-400); font-weight:500; }
+    .prev-next-name { font-weight:600; color:var(--navy); }
+    .share-btn { padding:.5rem .875rem; border-radius:var(--radius-sm); font-size:.8125rem; font-weight:600; cursor:pointer; transition:opacity .2s; display:inline-flex; align-items:center; gap:.35rem; border:none; margin:.25rem .25rem 0 0; font-family:var(--font-sans); }
+    .share-btn:hover { opacity:.8; }
+    @media (max-width:900px) { .detail-grid { grid-template-columns:1fr; } .prev-next { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main id="main-content" class="page-offset">
+
+  <section class="page-hero" id="page-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <nav class="breadcrumb" aria-label="경로">
+        <a href="../index.html">홈</a> <span>›</span>
+        <a href="policies.html">대전교육 9하기</a> <span>›</span>
+        <span id="bc-current" aria-current="page">공약 상세</span>
+      </nav>
+      <span class="section-label light" id="hero-key"></span>
+      <h1 class="section-title light" id="hero-title"></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="detail-grid">
+        <div>
+          <p class="detail-summary" id="detail-summary"></p>
+          <h2 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem">세부 추진 계획</h2>
+          <div class="detail-points" id="detail-points" role="list"></div>
+          <div class="prev-next" id="prev-next"></div>
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">관련 태그</div>
+            <div id="sidebar-tags" style="display:flex;flex-wrap:wrap;gap:.4rem"></div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">이 공약 공유하기</div>
+            <button class="share-btn" style="background:#FEE500;color:#3C1E1E" onclick="shareKakao()">💬 카카오톡</button>
+            <button class="share-btn" style="background:#1877F2;color:#fff" onclick="shareFB()">📘 페이스북</button>
+            <button class="share-btn" style="background:var(--gray-100);color:var(--gray-800)" onclick="copyLink()">🔗 링크 복사</button>
+            <p id="copy-msg" style="font-size:.75rem;color:var(--success);margin-top:.5rem;display:none">✅ 복사되었습니다!</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--navy);color:var(--white)">
+            <div style="font-size:.875rem;font-weight:700;color:var(--gold-light);margin-bottom:.5rem">🗳 투표로 바꿔주세요</div>
+            <p style="font-size:.8125rem;opacity:.8;line-height:1.7;margin-bottom:.875rem">사전투표 5월 29일(금)·30일(토)<br><strong style="color:var(--gold-light)">선거일 6월 3일(화)</strong></p>
+            <a href="together.html" class="btn btn-danger" style="font-size:.8125rem;padding:.5rem 1rem;width:100%;justify-content:center">투표 안내 보기 →</a>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">다른 공약 바로가기</div>
+            <div id="sidebar-other"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  function renderDetail() {
+    const id  = parseInt(new URLSearchParams(location.search).get('id')) || 1;
+    const data = SKJ_DATA;
+    const pol  = data.policies9.find(p => p.id === id);
+    if (!pol) { location.href = 'policies.html'; return; }
+
+    document.title = `${pol.key} | 대전교육 9하기 | 성광진`;
+    const hero = document.getElementById('page-hero');
+    hero.style.background = pol.color;
+    hero.setAttribute('data-num', String(pol.id).padStart(2,'0'));
+    document.getElementById('bc-current').textContent = pol.key;
+    document.getElementById('hero-key').textContent   = `대전교육 9하기 ${String(pol.id).padStart(2,'0')} · ${pol.icon} ${pol.key}`;
+    document.getElementById('hero-title').textContent = pol.title;
+
+    const sumEl = document.getElementById('detail-summary');
+    sumEl.textContent = pol.summary;
+    sumEl.style.borderLeftColor = pol.color;
+
+    document.getElementById('detail-points').innerHTML = pol.details.map((d, i) => `
+      <div class="detail-point fade-in fade-in-delay-${i+1}" role="listitem">
+        <div class="detail-point-num" style="background:${pol.color}">${i+1}</div>
+        <div class="detail-point-text">${d}</div>
+      </div>`).join('');
+
+    document.getElementById('sidebar-tags').innerHTML =
+      pol.tags.map(t => `<span class="badge badge-gray">#${t}</span>`).join('');
+
+    const prev = data.policies9.find(p => p.id === id - 1);
+    const next = data.policies9.find(p => p.id === id + 1);
+    document.getElementById('prev-next').innerHTML = `
+      ${prev ? `<a href="policy-detail.html?id=${prev.id}" class="prev-next-btn"><span class="prev-next-dir">← 이전</span><span class="prev-next-name">${prev.icon} ${prev.key}</span></a>` : '<div></div>'}
+      ${next ? `<a href="policy-detail.html?id=${next.id}" class="prev-next-btn" style="text-align:right"><span class="prev-next-dir">다음 →</span><span class="prev-next-name">${next.icon} ${next.key}</span></a>` : '<div></div>'}`;
+
+    document.getElementById('sidebar-other').innerHTML = data.policies9.filter(p => p.id !== id).map(p => `
+      <a href="policy-detail.html?id=${p.id}" style="font-size:.875rem;color:var(--gray-700);padding:.35rem 0;border-bottom:1px solid var(--gray-100);display:flex;gap:.4rem;align-items:center;text-decoration:none;transition:color .2s"
+         onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--gray-700)'">
+        <span>${p.icon}</span><span style="font-weight:500">${p.key}</span>
+      </a>`).join('');
+
+    initFadeIn();
+  }
+
+  function shareKakao() {
+    if (navigator.share) navigator.share({ title: document.title, url: location.href });
+    else window.open('https://story.kakao.com/share?url=' + encodeURIComponent(location.href));
+  }
+  function shareFB() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank', 'width=600,height=400');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(location.href).then(() => {
+      const m = document.getElementById('copy-msg');
+      m.style.display = 'block';
+      setTimeout(() => m.style.display = 'none', 2500);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', renderDetail);
+</script>
+</body>
+</html>

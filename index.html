@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="준비된 교육감 성광진 — 대전광역시교육감선거 민주진보 교육감 단일후보. 대전교육 9하기, 교육의 길 32년.">
+  <title>준비된 교육감 성광진 | 대전광역시교육감선거</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero {
+      min-height: 100svh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(200,136,26,.13) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(26,68,136,.6) 0%, transparent 60%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center; position: relative; z-index: 1;
+    }
+    .hero-left { color: var(--white); }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(200,136,26,.18); border: 1px solid rgba(200,136,26,.35);
+      border-radius: 999px; padding: .35rem 1rem;
+      font-size: .8125rem; font-weight: 600; color: var(--gold-light); margin-bottom: 1.5rem;
+    }
+    .hero-slogan {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem,3vw,1.875rem); font-weight: 700;
+      color: var(--gold-light); margin-bottom: .5rem; letter-spacing: -.02em;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem,7vw,5.5rem); font-weight: 800;
+      letter-spacing: -.04em; line-height: 1.05; margin-bottom: 1rem;
+    }
+    .hero-desc {
+      font-size: clamp(.9375rem,2vw,1.0625rem); color: rgba(255,255,255,.75);
+      max-width: 480px; line-height: 1.75; margin-bottom: 2rem;
+    }
+    .hero-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .hero-right { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-stat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; }
+    .hero-stat {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-md); padding: 1.25rem; color: var(--white);
+    }
+    .hero-stat-num {
+      font-family: var(--font-serif); font-size: 2rem; font-weight: 800;
+      color: var(--gold-light); line-height: 1; margin-bottom: .25rem;
+    }
+    .hero-stat-label { font-size: .8125rem; color: rgba(255,255,255,.65); }
+    .hero-vote-box {
+      background: rgba(200,136,26,.15); border: 1px solid rgba(200,136,26,.4);
+      border-radius: var(--radius-md); padding: 1.25rem 1.5rem; color: var(--white);
+    }
+    .hero-vote-title { font-size: .875rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
+    .hero-vote-row { display: flex; align-items: center; gap: .5rem; font-size: .875rem; margin-bottom: .4rem; }
+    .hero-vote-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; }
+    .promise-card {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 2rem; position: relative; overflow: hidden;
+      transition: all var(--transition);
+    }
+    .promise-card:hover { border-color: var(--navy-light); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .promise-num { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: .5rem; }
+    .promise-title { font-size: 1.0625rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.35; }
+    .promise-item { display: flex; gap: .6rem; align-items: flex-start; font-size: .875rem; color: var(--gray-600); line-height: 1.5; margin-bottom: .6rem; }
+    .promise-item-label { font-weight: 700; color: var(--navy); white-space: nowrap; flex-shrink: 0; }
+    .policies-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .quote-section {
+      background: var(--navy); padding: clamp(3rem,6vw,5rem) 0; position: relative; overflow: hidden;
+    }
+    .quote-section::before {
+      content: '"'; position: absolute; top: -2rem; left: 3rem;
+      font-family: var(--font-serif); font-size: 20rem; font-weight: 800;
+      color: rgba(255,255,255,.03); line-height: 1;
+    }
+    .quote-text {
+      font-family: var(--font-serif); font-size: clamp(1.125rem,3vw,1.75rem);
+      font-weight: 700; color: var(--white); line-height: 1.7;
+      max-width: 760px; margin: 0 auto; text-align: center; position: relative; z-index: 1;
+    }
+    .quote-source { text-align: center; color: var(--gold-light); font-size: .875rem; font-weight: 500; margin-top: 1.5rem; }
+    @media (max-width:900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .policies-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width:640px) { .policies-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="후보 소개">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-eyebrow">⭐ 민주진보 교육감 단일후보 · 성광진, 강재구 참여</div>
+          <div class="hero-slogan">준비된 교육감</div>
+          <h1 class="hero-name">성광진</h1>
+          <p class="hero-desc">32년간 대전의 교실에서 아이들 곁을 지킨 교육자.<br>대전교육 대전환, 더 이상 미룰 수 없습니다.</p>
+          <div class="hero-btns">
+            <a href="pages/policies.html" class="btn btn-gold">대전교육 9하기 →</a>
+            <a href="pages/candidate.html" class="btn btn-outline">후보 소개</a>
+          </div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-stat-grid">
+            <div class="hero-stat"><div class="hero-stat-num">32</div><div class="hero-stat-label">년 교육 현장 경력</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">대 핵심 공약</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">대 미래 약속</div></div>
+            <div class="hero-stat"><div class="hero-stat-num">1</div><div class="hero-stat-label">민주진보 단일후보</div></div>
+          </div>
+          <div class="hero-vote-box">
+            <div class="hero-vote-title">🗳 투표 일정</div>
+            <div class="hero-vote-row"><span class="hero-vote-dot"></span><span>사전투표 5월 29일(금) · 30일(토)</span></div>
+            <div class="hero-vote-row"><span class="hero-vote-dot" style="background:#ef4444"></span><span><strong style="color:#ffcdd2">선거일 6월 3일(화)</strong> — 대전교육 대전환의 날</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 인용 -->
+  <section class="quote-section" aria-label="후보 메시지">
+    <div class="container">
+      <blockquote class="quote-text">
+        교사가 오직 아이들만 바라보는 학교를 만들겠습니다.<br>
+        모든 학교 구성원이 존중받으며 일하는 일터를 만들겠습니다.<br>
+        학생의 개성이 빛나는 교실을 만들겠습니다.
+      </blockquote>
+      <p class="quote-source">— 성광진, 대전교육 대전환 선언문에서</p>
+    </div>
+  </section>
+
+  <!-- 3대 약속 -->
+  <section class="section" aria-labelledby="promises-title">
+    <div class="container">
+      <div class="text-center mb-3">
+        <span class="section-label">대전교육 대전환 · 미래를 여는</span>
+        <h2 class="section-title" id="promises-title">3대 약속</h2>
+        <p class="section-subtitle">폭력과 사고 없는 안심 학교, 기초학력 책임교육과 AI 기반 자기주도적 성장을 지원하겠습니다.</p>
+      </div>
+      <div class="grid-3" id="promises-grid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- 9하기 -->
+  <section class="section section-alt" aria-labelledby="policies-title">
+    <div class="container">
+      <div class="text-center mb-3">
+        <span class="section-label">9개 핵심 공약</span>
+        <h2 class="section-title" id="policies-title">대전교육 9하기</h2>
+        <p class="section-subtitle">달라지는 교육, 바로 그 변화는 시민의 선택에서 시작됩니다.</p>
+      </div>
+      <div class="policies-grid" id="policies-grid" role="list"></div>
+      <div class="text-center mt-4">
+        <a href="pages/policies.html" class="btn btn-primary">전체 공약 자세히 보기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 후보 소개 -->
+  <section class="section" aria-labelledby="about-title">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:center">
+        <div class="fade-in">
+          <span class="section-label">교육의 길 32년</span>
+          <h2 class="section-title" id="about-title">성광진은<br>한순간도<br>아이들 곁을<br>떠나지 않았습니다.</h2>
+        </div>
+        <div id="achievements-list" class="fade-in fade-in-delay-2"></div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="pages/candidate.html" class="btn btn-primary">후보 경력 전체 보기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section text-center" aria-label="투표 안내" style="background:var(--danger);color:var(--white)">
+    <div class="container">
+      <span class="section-label" style="color:rgba(255,255,255,.8)">6월 3일, 대전교육 대전환의 날</span>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:1rem">여러분의 한 표가<br>아이들의 미래를 바꿉니다</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.8);margin-bottom:1.5rem">사전투표 5월 29일(금) · 30일(토) | 선거일 6월 3일(화)</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="pages/together.html" class="btn" style="background:var(--white);color:var(--danger);font-weight:700">투표 안내 자세히 보기 →</a>
+        <a href="pages/policies.html" class="btn btn-outline">대전교육 9하기 보기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<div id="footer-placeholder"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function renderHome() {
+    const data = SKJ_DATA;
+
+    /* 3대 약속 */
+    document.getElementById('promises-grid').innerHTML = data.promises3.map((p, i) => `
+      <article class="promise-card fade-in fade-in-delay-${i+1}" role="listitem">
+        <div class="promise-num">${String(p.num).padStart(2,'0')}</div>
+        <h3 class="promise-title">${p.title}</h3>
+        ${p.items.map(it => `
+          <div class="promise-item">
+            <span class="promise-item-label">${it.label}</span>
+            <span>${it.desc}</span>
+          </div>`).join('')}
+      </article>`).join('');
+
+    /* 9하기 그리드 */
+    document.getElementById('policies-grid').innerHTML = data.policies9.map((pol, i) => `
+      <article class="policy-card fade-in fade-in-delay-${(i%3)+1}"
+               style="--card-color:${pol.color}" role="listitem" tabindex="0"
+               aria-label="${pol.id}번 공약: ${pol.key} — ${pol.title}"
+               onclick="location.href='pages/policy-detail.html?id=${pol.id}'"
+               onkeydown="if(event.key==='Enter')location.href='pages/policy-detail.html?id=${pol.id}'">
+        <div class="policy-card-num">${String(pol.id).padStart(2,'0')}</div>
+        <div class="policy-card-icon" aria-hidden="true">${pol.icon}</div>
+        <div class="policy-card-key">${pol.key}</div>
+        <div class="policy-card-title">${pol.title}</div>
+        <div class="policy-card-tags">
+          ${pol.tags.map(t => `<span class="badge badge-gray" style="font-size:.7rem">#${t}</span>`).join('')}
+        </div>
+      </article>`).join('');
+
+    /* 성과 */
+    document.getElementById('achievements-list').innerHTML = data.achievements.map((a, i) => `
+      <div class="fade-in fade-in-delay-${i+1}" style="display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem">
+        <span style="font-size:1.5rem;flex-shrink:0" aria-hidden="true">${a.icon}</span>
+        <div>
+          <div style="font-size:.9375rem;font-weight:700;color:var(--navy);margin-bottom:.2rem">${a.title}</div>
+          <div style="font-size:.875rem;color:var(--gray-600);line-height:1.6">${a.desc}</div>
+        </div>
+      </div>`).join('');
+
+    initFadeIn();
+  }
+
+  document.addEventListener('DOMContentLoaded', renderHome);
+</script>
+</body>
+</html>

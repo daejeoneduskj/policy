@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="성광진 후보 소개 — 교육의 길 32년, 주요 성과, 공식 공개자료">
+  <title>후보 소개 | 준비된 교육감 성광진</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero {
+      background: var(--navy); color: var(--white);
+      padding: clamp(3.5rem,7vw,5.5rem) 0 clamp(3rem,6vw,4.5rem);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 100% at 90% 50%, rgba(200,136,26,.12), transparent 60%);
+    }
+    .breadcrumb { font-size:.8125rem; color:rgba(255,255,255,.5); margin-bottom:1rem; display:flex; align-items:center; gap:.4rem; }
+    .breadcrumb a { color:rgba(255,255,255,.6); } .breadcrumb a:hover { color:var(--white); }
+    .profile-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:3.5rem; align-items:start; }
+    .profile-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding:2rem; text-align:center; position:sticky; top:calc(var(--nav-height) + 1.5rem); }
+    .profile-avatar { width:120px; height:120px; border-radius:50%; background:linear-gradient(135deg,var(--navy),var(--navy-mid)); display:flex; align-items:center; justify-content:center; font-size:3.5rem; margin:0 auto 1.25rem; border:4px solid var(--gold-pale); }
+    .profile-name { font-family:var(--font-serif); font-size:2rem; font-weight:800; color:var(--navy); margin-bottom:.25rem; }
+    .profile-title { font-size:.9375rem; color:var(--gray-600); margin-bottom:1.25rem; }
+    .profile-badges { display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center; }
+    .profile-stats { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-top:1.5rem; }
+    .profile-stat { background:var(--off-white); border-radius:var(--radius-md); padding:.875rem; }
+    .profile-stat-num { font-family:var(--font-serif); font-size:1.5rem; font-weight:800; color:var(--navy); line-height:1; }
+    .profile-stat-label { font-size:.75rem; color:var(--gray-600); margin-top:.2rem; }
+    .timeline { display:flex; flex-direction:column; gap:0; }
+    .timeline-item { display:flex; gap:1.5rem; padding-bottom:2rem; position:relative; }
+    .timeline-item:not(:last-child)::before { content:''; position:absolute; left:1.375rem; top:3.25rem; bottom:0; width:2px; background:var(--gray-200); }
+    .timeline-icon { width:2.75rem; height:2.75rem; border-radius:50%; flex-shrink:0; background:var(--navy-deep); display:flex; align-items:center; justify-content:center; font-size:1.25rem; border:3px solid var(--gold-pale); position:relative; z-index:1; }
+    .timeline-content { flex:1; padding-top:.35rem; }
+    .timeline-title { font-size:1.0625rem; font-weight:700; color:var(--navy); margin-bottom:.4rem; line-height:1.35; }
+    .timeline-desc { font-size:.9375rem; color:var(--gray-600); line-height:1.7; }
+    .career-group { margin-bottom:1.75rem; }
+    .career-group-title { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-400); margin-bottom:.75rem; }
+    .career-item { display:flex; align-items:flex-start; gap:.6rem; font-size:.9375rem; color:var(--gray-800); line-height:1.5; margin-bottom:.5rem; }
+    .career-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:.55rem; }
+    .public-info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .public-info-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-md); padding:1.25rem; }
+    .public-info-label { font-size:.75rem; font-weight:600; color:var(--gray-400); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.35rem; }
+    .public-info-value { font-size:1.0625rem; font-weight:700; color:var(--navy); }
+    .public-info-value.good { color:var(--success); }
+    .property-table { width:100%; border-collapse:collapse; font-size:.875rem; }
+    .property-table th { background:var(--off-white); padding:.6rem .875rem; text-align:left; font-size:.75rem; color:var(--gray-600); font-weight:600; border-bottom:1px solid var(--gray-200); }
+    .property-table td { padding:.6rem .875rem; border-bottom:1px solid var(--gray-200); }
+    .property-table tr:last-child td { border-bottom:none; }
+    .property-table td:last-child { text-align:right; font-weight:500; }
+    @media (max-width:900px) { .profile-grid { grid-template-columns:1fr; } .profile-card { position:static; } .public-info-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<main id="main-content" class="page-offset">
+
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:1">
+      <nav class="breadcrumb" aria-label="경로">
+        <a href="../index.html">홈</a> <span>›</span> <span aria-current="page">후보 소개</span>
+      </nav>
+      <span class="section-label light">교육의 길 32년</span>
+      <h1 class="section-title light">성광진은<br>늘 아이들 곁에서<br>새로운 교육의 길을<br>만들어 왔습니다.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="profile-grid">
+        <aside>
+          <div class="profile-card fade-in">
+            <div class="profile-avatar" aria-hidden="true">👤</div>
+            <div class="profile-name">성광진</div>
+            <div class="profile-title">교육활동가 · 대전교육연구소 소장</div>
+            <div class="profile-badges">
+              <span class="badge badge-navy">민주진보 단일후보</span>
+              <span class="badge badge-gold">교육경력 32년</span>
+              <span class="badge badge-gray">1957. 12. 18 (68세)</span>
+            </div>
+            <div class="profile-stats">
+              <div class="profile-stat"><div class="profile-stat-num">32</div><div class="profile-stat-label">년 교직 경력</div></div>
+              <div class="profile-stat"><div class="profile-stat-num">4</div><div class="profile-stat-label">번 해직·복직</div></div>
+              <div class="profile-stat"><div class="profile-stat-num">1</div><div class="profile-stat-label">전국 최초 성과</div></div>
+              <div class="profile-stat"><div class="profile-stat-num">0</div><div class="profile-stat-label">전과기록</div></div>
+            </div>
+            <div style="margin-top:1.25rem;font-size:.8125rem;color:var(--gray-600);text-align:left;line-height:1.8">
+              <strong>출생:</strong> 충남 홍성<br>
+              <strong>학력:</strong> 한남대학교 국어국문학과 졸업<br>
+              <strong>현직:</strong> 대전교육연구소 소장
+            </div>
+          </div>
+        </aside>
+        <div>
+          <h2 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:1.75rem">주요 성과 · 이력</h2>
+          <div class="timeline" id="timeline-list" role="list"></div>
+          <div style="margin-top:3rem" id="career-list">
+            <h2 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:1.5rem">전체 경력</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="public-info-title">
+    <div class="container">
+      <span class="section-label">투명성 공개</span>
+      <h2 class="section-title" id="public-info-title" style="margin-bottom:.5rem">후보자 정보 공개자료</h2>
+      <p class="section-subtitle">선거공보 원문 기재 사항을 그대로 공개합니다.</p>
+      <div class="public-info-grid fade-in">
+        <div class="public-info-card"><div class="public-info-label">전과기록</div><div class="public-info-value good">✅ 해당 없음</div></div>
+        <div class="public-info-card"><div class="public-info-label">세금 체납</div><div class="public-info-value good">✅ 없음</div></div>
+        <div class="public-info-card"><div class="public-info-label">병역사항</div><div class="public-info-value">육군 하사 만기 전역</div></div>
+        <div class="public-info-card"><div class="public-info-label">최근 5년 납세액(계)</div><div class="public-info-value">11,105천원</div></div>
+      </div>
+      <div class="card fade-in" style="margin-top:1.5rem">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem">재산 현황 (단위: 천원)</h3>
+        <div style="overflow-x:auto">
+          <table class="property-table" aria-label="재산 현황 상세">
+            <thead><tr><th>구분</th><th>계</th><th>후보자</th><th>배우자</th><th>직계비속</th></tr></thead>
+            <tbody><tr><td>재산 합계</td><td>261,353</td><td>42,673</td><td>218,680</td><td>고지거부</td></tr></tbody>
+          </table>
+        </div>
+        <p style="font-size:.75rem;color:var(--gray-400);margin-top:.75rem">※ 직계존속 해당 없음. 선거공보 공개자료 원문 기재 사항.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section text-center">
+    <div class="container">
+      <h2 class="section-title" style="margin-bottom:.75rem">함께 대전교육을 바꿔나갑시다</h2>
+      <p class="section-subtitle">사전투표 5월 29일~30일 · 선거일 6월 3일</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="together.html" class="btn btn-danger">🗳 투표 안내 보기</a>
+        <a href="policies.html" class="btn btn-primary">대전교육 9하기 →</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  function renderCandidate() {
+    const data = SKJ_DATA;
+    document.getElementById('timeline-list').innerHTML = data.achievements.map((a, i) => `
+      <div class="timeline-item fade-in fade-in-delay-${i+1}" role="listitem">
+        <div class="timeline-icon" aria-hidden="true">${a.icon}</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">${a.title}</h3>
+          <p class="timeline-desc">${a.desc}</p>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('career-list').innerHTML += `
+      <div class="career-group">
+        <div class="career-group-title">현직</div>
+        ${data.career.current.map(c => `<div class="career-item"><span class="career-dot"></span><span>${c}</span></div>`).join('')}
+      </div>
+      <div class="career-group">
+        <div class="career-group-title">전직</div>
+        ${data.career.past.map(c => `<div class="career-item"><span class="career-dot"></span><span>${c}</span></div>`).join('')}
+      </div>`;
+
+    initFadeIn();
+  }
+  document.addEventListener('DOMContentLoaded', renderCandidate);
+</script>
+</body>
+</html>
