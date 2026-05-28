@@ -23,7 +23,7 @@ const SKJ_DATA = {
   },
   sns: {
     youtube:   "https://www.youtube.com/c/%EC%84%B1%EA%B4%91%EC%A7%84",
-    facebook:  "https://www.facebook.com/groups/637386530924727",
+    facebook:  "https://www.facebook.com/eskjini",
     instagram: "https://www.instagram.com/gwangjinseong/",
     threads:   "https://www.threads.com/@seong_gwangjin?hl=ko",
     blog:      "https://blog.naver.com/skjin111"
